@@ -63,8 +63,8 @@
         <!--首页-->
         <scene sceneID="AfJ-Ur-bIy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aHc-M7-5LS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="7UA-Kq-qvj"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aHc-M7-5LS" customClass="NavViewController" customModule="PrivilegeProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="TabBar_home_23x23_" id="7UA-Kq-qvj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wwo-Wo-0Tq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -280,30 +280,7 @@
                     <view key="view" contentMode="scaleToFill" id="nTH-Xx-c2v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好用户，您还没有收藏商品" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yT-Ia-WCt">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尊敬的用户您好，您钱包总资产为：¥1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cg-5v-fDF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="cQJ-Kh-BFh" firstAttribute="top" secondItem="6yT-Ia-WCt" secondAttribute="bottom" id="2o4-aI-wUH"/>
-                            <constraint firstItem="6yT-Ia-WCt" firstAttribute="top" secondItem="hFf-eo-Hjk" secondAttribute="bottom" id="7VP-hX-pGz"/>
-                            <constraint firstAttribute="trailing" secondItem="6yT-Ia-WCt" secondAttribute="trailing" id="I6r-L1-zGu"/>
-                            <constraint firstAttribute="trailing" secondItem="3cg-5v-fDF" secondAttribute="trailing" id="SDj-ap-INg"/>
-                            <constraint firstItem="3cg-5v-fDF" firstAttribute="top" secondItem="hFf-eo-Hjk" secondAttribute="bottom" id="dPx-qO-SY9"/>
-                            <constraint firstItem="3cg-5v-fDF" firstAttribute="leading" secondItem="nTH-Xx-c2v" secondAttribute="leading" id="i3o-3f-36i"/>
-                            <constraint firstItem="6yT-Ia-WCt" firstAttribute="leading" secondItem="nTH-Xx-c2v" secondAttribute="leading" id="rhK-J8-ZNo"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UK9-OW-aXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,8 +290,8 @@
         <!--我的-->
         <scene sceneID="06z-2M-YrQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYh-Pg-zwN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="SmE-ty-CED"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TYh-Pg-zwN" customClass="NavViewController" customModule="PrivilegeProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" image="TabBar_me_boy_23x23_" id="SmE-ty-CED"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dYK-kR-25H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -331,6 +308,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TabBar_home_23x23_" width="23" height="23"/>
+        <image name="TabBar_me_boy_23x23_" width="23" height="23"/>
         <image name="icon" width="200" height="200"/>
     </resources>
 </document>

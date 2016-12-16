@@ -11,14 +11,7 @@ import UIKit
 class ShowViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     var tableView:UITableView?//数据表
-    var model:HomeModel!{
-    
-        didSet{
-        
-            //数据的加载
-            self.p_loadData()
-        }
-    }//数据
+    var model:HomeModel!//数据
     var dataArray = [ShowModel]()//数据数组
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +35,27 @@ class ShowViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let model = ShowModel.init(dic: dic as! [String : AnyObject])
             dataArray.append(model)
         }
+        //表刷新数据
+        tableView?.reloadData()
+        //结束刷新
+        tableView?.mj_header.endRefreshing()
+        tableView?.mj_footer.endRefreshing()
     }
 
+    //下啦刷新的数据加载
+    func p_loadHeaderData(){
+    
+        dataArray.removeAll()//删除所有的数据
+        //数据的加载
+        self.p_loadData()
+    }
+    //上啦刷新的数据加载
+    func p_loadFooterData(){
+    
+        //数据的加载
+        self.p_loadData()
+    }
+    
     func p_loadTableView(){
     
         tableView = UITableView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
@@ -53,6 +65,13 @@ class ShowViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //注册单元格
         tableView?.register(UINib.init(nibName: "ShowCell", bundle: nil), forCellReuseIdentifier: "ShowCell")
         self.view.addSubview(tableView!)
+        //下拉刷新
+        let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(p_loadHeaderData))
+        tableView?.mj_header = header
+        //直接刷新
+        tableView?.mj_header.beginRefreshing()
+        //上拉刷新
+        tableView?.mj_footer = MJRefreshAutoNormalFooter.init(refreshingTarget: self, refreshingAction: #selector(p_loadFooterData))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,6 +89,13 @@ class ShowViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
+        //跳转界面
+        self.hidesBottomBarWhenPushed = true
+        let model = dataArray[indexPath.row]
+        let detailVC = DetailViewController()
+        detailVC.title = model.name
+        detailVC.showModel = model
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
     
 }

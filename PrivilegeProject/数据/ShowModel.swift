@@ -18,6 +18,7 @@ class ShowModel: NSObject {
     var type:String?//类别
     var des2:String?//分描述
     var des3:String?//分描述
+    var image:String?//图片
     //加载数据
     init(dic:[String:AnyObject]) {
         super.init()

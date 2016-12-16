@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController,HomeTableViewDelegate,HomeCollectionViewDelegate {
+class HomeViewController: UIViewController,HomeTableViewDelegate,HomeCollectionViewDelegate,HeaderScrollViewDelegate {
 
     var footView:UIView?
     var tableView:HomeTableView? = nil//表试图
@@ -47,8 +47,9 @@ class HomeViewController: UIViewController,HomeTableViewDelegate,HomeCollectionV
     //头部滑动加载
     func p_loadTopScrollView(){
     
-        let view = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 200))
-        view.backgroundColor = UIColor.lightGray
+        let view = HeaderScrollView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 200))
+        view.backgroundColor = UIColor.white
+        view.delegate = self
         self.view.addSubview(view)
         //底部视图
         footView = UIView.init(frame: CGRect.init(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height - 200 - 49))
@@ -108,6 +109,18 @@ class HomeViewController: UIViewController,HomeTableViewDelegate,HomeCollectionV
         showVC.title = model.name
         showVC.model = model
         self.navigationController?.pushViewController(showVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
+    }
+    
+    //传递点击的数据
+    func tranTapEvent(item:ShowModel){
+    
+        //跳转界面
+        self.hidesBottomBarWhenPushed = true
+        let detailVC = DetailViewController()
+        detailVC.title = item.name
+        detailVC.showModel = item
+        self.navigationController?.pushViewController(detailVC, animated: true)
         self.hidesBottomBarWhenPushed = false
     }
 }

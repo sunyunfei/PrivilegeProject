@@ -45,7 +45,7 @@ class ShowCell: UITableViewCell {
         let dateFor = DateFormatter()
         dateFor.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateStr = dateFor.string(from: Date())
-        time.text = dateStr
+        time.text = "截止时间" + dateStr
     }
     
 }

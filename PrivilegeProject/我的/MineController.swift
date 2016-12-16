@@ -37,7 +37,8 @@ class MineController: UITableViewController {
             self.hidesBottomBarWhenPushed = true;
             //根据故事板获得控制器
             let story = UIStoryboard.init(name: "Main", bundle: nil)
-            let aboutVC = story.instantiateViewController(withIdentifier: "mine")
+            let aboutVC = story.instantiateViewController(withIdentifier: "mine") as! AboutViewController
+            aboutVC.titleInt = indexPath.row
             //跳转界面
             self.navigationController?.pushViewController(aboutVC, animated: true)
             //显示导航栏
