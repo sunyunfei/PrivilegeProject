@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>超市</string>
+		<key>name</key>
+		<string>超市</string>
+	</dict>
+    <dict>
+        <key>icon</key>
+        <string>餐厅</string>
+        <key>name</key>
+        <string>餐厅</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>聚餐</string>
+        <key>name</key>
+        <string>聚餐畅饮</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>衣服</string>
+        <key>name</key>
+        <string>衣服购物</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>首饰</string>
+        <key>name</key>
+        <string>首饰装饰</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>移动</string>
+        <key>name</key>
+        <string>移动服务</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>联通</string>
+        <key>name</key>
+        <string>联通服务</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>电信</string>
+        <key>name</key>
+        <string>电信服务</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>文件</string>
+        <key>name</key>
+        <string>文件复印</string>
+    </dict>
+    <dict>
+        <key>icon</key>
+        <string>水果</string>
+        <key>name</key>
+        <string>水果专卖</string>
+    </dict>
+</array>
+</plist>
